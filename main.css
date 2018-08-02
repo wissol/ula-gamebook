@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css?family=Inknut+Antiqua');
+
+body {
+	background-color: rgba(33,33,33,1.0);
+	font-family: 'Inknut Antiqua', serif;
+	color: silver;
+}
+
+b {
+	font-weight: normal;
+	color: #b47853;
+}
+
+figure {margin: 1em auto;}
+
+img.textImage {
+	width: 100%;
+	height: auto;
+	border: thin silver solid;
+}
+
+footer {font-size: 0.8em;}
+
+aside ul {padding-left: 0;}
+
+li {list-style-type: none; 
+	line-height: 1.5em;
+}
+
+li + li {margin-top: .3em;}
+
+ol li {text-indent: -1em; max-width: 400px;}
+
+header, main, footer {
+	max-width: 600px; 
+	margin: 0 auto;
+	padding-left: 0.5em;}
+
+h1, h2, h3{
+	color: #b47853; 	
+	border-bottom: thick #b47853 solid;
+}
+
+h1 {font-size: 2.25em; }
+h2 {font-size: 1.7em;}
+h3 {border-width: thin;}
+
+p {
+	font-size: 1em;
+	line-height: 1.5em;
+	margin: 8px auto;}
+
+p + p {text-indent: 1em;}
+
+a {color: #b47853; text-decoration: none;}
+
+a:hover {text-decoration: underline; }
+
+.informacionTexto {color:red;}
+
+.hide {display: none;}
+
+.small {font-size:.8em;}
+
+@media (min-width: 1200px)
+	{
+	body {display: flex; justify-content: center; }
+	}
+
+	header {
+	width: 400px; 
+	margin: 0 3em 0 0;}
+
+	main { margin: 24.120px 0;}
+
