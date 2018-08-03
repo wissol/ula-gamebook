@@ -11,9 +11,11 @@ const grabar = document.querySelector("#grabar");
 function toggleDisplayElement(element){
   if (element.classList.contains('hide')){
     element.classList.remove('hide');
+    element.previousElementSibling.classList.add('chevronRight');
   }
   else{
     element.classList.add('hide');
+    element.previousElementSibling.classList.remove('chevronRight');
   }
 }
 

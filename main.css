@@ -62,14 +62,34 @@ a:hover {text-decoration: underline; }
 
 .small {font-size:.8em;}
 
+.chevron {position: relative;}
+
+.chevron::after {
+	border-style: solid;
+	border-width: 0.25em 0.25em 0 0;
+	content: '';
+	display: inline-block;
+	height: 0.45em;
+	position: absolute;
+	bottom: 18px;
+	right: 0;
+	transform: rotate(45deg);
+	width: 0.45em;
+}
+
+.chevronRight::after {
+	transform: rotate(135deg);
+}
+
+
 @media (min-width: 1200px)
 	{
 	body {display: flex; justify-content: center; }
-	}
+
 
 	header {
 	width: 400px; 
 	margin: 0 3em 0 0;}
 
 	main { margin: 24.120px 0;}
-
+	}
