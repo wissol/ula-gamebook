@@ -1,4 +1,3 @@
-console.log("hola, mundo feliz");
 
 const hojaPersonajeMenu = document.querySelector("#hojaPersonajeMenu");
 const hojaPersonaje = document.querySelector("#hojaPersonaje");
