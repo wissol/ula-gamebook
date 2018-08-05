@@ -48,7 +48,7 @@ h3 {border-width: thin;}
 p {
 	font-size: 1em;
 	line-height: 1.5em;
-	margin: 8px auto;}
+	margin: .5em auto;}
 
 p + p {text-indent: 1em;}
 
@@ -81,10 +81,18 @@ a:hover {text-decoration: underline; }
 	transform: rotate(135deg);
 }
 
+#mensajes {
+	margin: 0 auto; 
+	padding: 1em;
+	color:black; 
+	background: #FFDC00; 
+	font-family: 'courier new', monospace; 
+	text-align: center;}
+
 
 @media (min-width: 1200px)
 	{
-	body {display: flex; justify-content: center; }
+	#flex {display: flex; justify-content: center; }
 
 
 	header {
@@ -92,4 +100,6 @@ a:hover {text-decoration: underline; }
 	margin: 0 3em 0 0;}
 
 	main { margin: 24.120px 0;}
+
+	#mensajes {width: 1224px;}
 	}

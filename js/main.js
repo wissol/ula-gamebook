@@ -2,6 +2,7 @@
 // global constants and variables
 
 // DOM elements
+const mensaje           = document.querySelector("#mensajes");
 // DOM -- Aside Menu
 const hojaPersonajeMenu = document.querySelector("#hojaPersonajeMenu");
 const hojaPersonaje     = document.querySelector("#hojaPersonaje");
@@ -10,6 +11,8 @@ const inventario        = document.querySelector("#inventario");
 const comandosMenu      = document.querySelector("#comandosMenu");
 const comandos          = document.querySelector("#comandos");
 const grabar            = document.querySelector("#grabar");
+const cargar            = document.querySelector("#cargar");
+const nuevoJuego        = document.querySelector("#nuevoJuego");
 // DOM -- Main Text 
 const figuraOpcional    = document.querySelector("#figuraOpcional");
 const tituloSeccion     = document.querySelector("#sectionTitle");
@@ -22,6 +25,7 @@ const fueValue          = document.querySelector("#fueValue");
 const agiValue          = document.querySelector("#agiValue");
 const perValue          = document.querySelector("#perValue");
 const saludValue        = document.querySelector("#saludValue");
+
 // Helper functions
 function toggleDisplayElement(element){
   if (element.classList.contains('hide')){
@@ -34,10 +38,30 @@ function toggleDisplayElement(element){
   }
 }
 
+function toggleDisplayMessage(message){
+  if (message.classList.contains('hide')){
+    message.classList.remove('hide');
+  }
+  else{
+    message.classList.add('hide');
+  }
+}
+
+function displayMessage(message){
+  mensaje.innerHTML = `${message} <span>&times;</span>`;
+  toggleDisplayMessage(mensaje);
+}
+
 function saveGame(whatToSave){
   localStorage.clear();
   localStorage.setItem("personajeNombre", "Pedro");
-  console.log("Saved!" + localStorage.getItem("personajeNombre"));
+  displayMessage("Saved!" + localStorage.getItem("personajeNombre"));
+}
+
+function newGame(){
+  displayMessage("e")
+  protagonista = nuevoProtagonista();
+  setCharacterSheet()
 }
 
 
@@ -97,9 +121,8 @@ function nuevoProtagonista(){
 // Gamebook sections and data
 
 // Protagonista -> Protagonist aka PlayerCharacter
-
-
-const protagonista = nuevoProtagonista();
+var protagonista={};
+// const protagonista = nuevoProtagonista();
 
 // Secciones == Gamebook Sections
 // To-do Load secciones from JSON
@@ -171,15 +194,23 @@ const secciones = [
 ]
 
 
-// Initialize game
+// Listeners
 
-hojaPersonajeMenu.addEventListener('click', () => {toggleDisplayElement(hojaPersonaje);});
+hojaPersonajeMenu.addEventListener('click', () => {
+  if(protagonista.edad){
+    toggleDisplayElement(hojaPersonaje);
+  } else {
+    mensaje.innerHTML = `Crea un nuevo juego <span>&times;</span>`;
+    toggleDisplayMessage(mensaje);
+  }
+});
 inventarioMenu.addEventListener('click', () => {toggleDisplayElement(inventario);});
 comandosMenu.addEventListener('click', () => {toggleDisplayElement(comandos);});
 grabar.addEventListener('click', () => {saveGame("aPedro");} );
-
-
-setCharacterSheet(); // This should only execute after a new game
+nuevoJuego.addEventListener('click', () => {newGame();} );
+mensajes.addEventListener('click', () => {toggleDisplayMessage(mensajes);});
+; // This should only execute after a new game
 
 seccion = parseSeccion(secciones[0]);
 
+console.log(protagonista);
