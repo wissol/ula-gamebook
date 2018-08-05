@@ -30,7 +30,7 @@ const saludValue        = document.querySelector("#saludValue");
 function toggleDisplayElement(element){
   if (element.classList.contains('hide')){
     element.classList.remove('hide');
-    element.previousElementSibling.classList.add('chevronRight');
+    element.previousElementSibling.classList.add('chevronDown');
   }
   else{
     element.classList.add('hide');
