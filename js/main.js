@@ -2,6 +2,7 @@
 // global constants and variables
 
 // DOM elements
+// DOM -- Aside Menu
 const hojaPersonajeMenu = document.querySelector("#hojaPersonajeMenu");
 const hojaPersonaje     = document.querySelector("#hojaPersonaje");
 const inventarioMenu    = document.querySelector("#inventarioMenu");
@@ -9,12 +10,18 @@ const inventario        = document.querySelector("#inventario");
 const comandosMenu      = document.querySelector("#comandosMenu");
 const comandos          = document.querySelector("#comandos");
 const grabar            = document.querySelector("#grabar");
+// DOM -- Main Text 
 const figuraOpcional    = document.querySelector("#figuraOpcional");
 const tituloSeccion     = document.querySelector("#sectionTitle");
 const textoPrincipal    = document.querySelector("#textoPrincipal");
 const listaOpciones     = document.querySelector("#listaOpciones");
+// DOM -- Character Sheet Values
+const nombreValue       = document.querySelector("#nombreValue");
+const edadValue         = document.querySelector("#edadValue");
 const fueValue          = document.querySelector("#fueValue");
-
+const agiValue          = document.querySelector("#agiValue");
+const perValue          = document.querySelector("#perValue");
+const saludValue        = document.querySelector("#saludValue");
 // Helper functions
 function toggleDisplayElement(element){
   if (element.classList.contains('hide')){
@@ -68,20 +75,31 @@ function d6(){
   return singleDice(6)
 }
 
-// Gamebook sections and data
+function setCharacterSheet(){
+  nombreValue.innerText = protagonista.nombre;
+  edadValue.innerText = protagonista.edad;
+  fueValue.innerText = protagonista.fue;
+  agiValue.innerText = protagonista.agi;
+  perValue.innerText = protagonista.per;
+}
 
-// Protagonista -> Protagonist aka PlayerCharacter
-
-
-const protagonista = {
+function nuevoProtagonista(){
+  return {
   nombre:"Pepe",
   edad: 12+singleDice(3)-singleDice(3),
   fue:   8+singleDice(3)-singleDice(3),
   agi:  11+singleDice(3)-singleDice(3),
   per:  11+singleDice(4)-singleDice(3)
+  }
 }
 
-console.log(protagonista.fue);
+
+// Gamebook sections and data
+
+// Protagonista -> Protagonist aka PlayerCharacter
+
+
+const protagonista = nuevoProtagonista();
 
 // Secciones == Gamebook Sections
 // To-do Load secciones from JSON
@@ -160,9 +178,6 @@ inventarioMenu.addEventListener('click', () => {toggleDisplayElement(inventario)
 comandosMenu.addEventListener('click', () => {toggleDisplayElement(comandos);});
 grabar.addEventListener('click', () => {saveGame("aPedro");} );
 
-function setCharacterSheet(){
-  fueValue.innerText = protagonista.fue;
-}
 
 setCharacterSheet(); // This should only execute after a new game
 
