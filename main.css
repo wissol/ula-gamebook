@@ -81,6 +81,14 @@ a:hover {text-decoration: underline; }
 	transform: rotate(135deg);
 }
 
+.theEnd {
+	font-size: 1.7em;
+	text-align: center;
+	margin: 2em;
+	color: #b47853; 
+	text-indent: 0;
+}
+
 #mensajes {
 	margin: 0 auto; 
 	padding: 1em;
