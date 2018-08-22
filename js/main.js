@@ -125,9 +125,13 @@ function parseOpciones(opciones, salidas){
 
 function parseSeccionInventario(cosas){
   let inventarioDeSeccion = `<p id="listaInventarioSeccion"> Objetos: `;
-  cosas.forEach(function(cosa) {
-    inventarioDeSeccion += `<span class="cosa" data-Cosa=${cosa}>${cosa}</li>`;
+  cosas.forEach(function(cosa, index) {
+    inventarioDeSeccion += ` <span class="cosa" data-Cosa=${cosa}>${cosa}</li>,`;
+    if (index == cosas.length-2) { // Penultime element
+      inventarioDeSeccion = inventarioDeSeccion.replace(/.$/," y ");
+    }
   });
+  inventarioDeSeccion = inventarioDeSeccion.replace(/.$/,".");
   inventarioDeSeccion += `</p>`;
   inventarioSeccionPadre.innerHTML = inventarioDeSeccion;
 }

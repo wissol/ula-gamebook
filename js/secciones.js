@@ -48,7 +48,7 @@ const secciones = [
       
     ],
     opcionesSalidas:[2,3],
-    inventario:["una piedra"]
+    inventario:["una piedra", "otra piedra"]
   },
 
   {
