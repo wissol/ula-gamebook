@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-	<title>Perdido en Ula | Librojuego</title>
+	<title>{{titulo}} | Librojuego</title>
 	<link rel="stylesheet" type="text/css" href="main.css">
   
   <meta charset="utf-8">
@@ -10,46 +10,52 @@
   <div id="mensajes" class="hide"></div>
 <div id="flex">
 
-<header>
-<h1>Perdido en Ula</h1>
-<aside>
-<h3 id="comandosMenu" class="chevron chevronDown">Comandos</h3>
-<ul id="comandos" class="">
-<li id="grabar">Grabar</li>
-<li id="cargar">Cargar</li>
-<li id="nuevoJuego">Nuevo juego</li>
-</ul>
-<h3 id="hojaPersonajeMenu" class="chevron">Hoja de Personaje</h3>
-<ul id="hojaPersonaje" class="hide">
-  <li><span id="nombreValue"></span>, <span id="edadValue"></span> años</li>
-  <li>FUE: <span id="fueValue"></span> AGI: <span id="agiValue"></span> PER: <span id="perValue"></span></li>
-  <li>Salud: <span id="saludValue"></span></li>
-</ul>
-<h3 id="inventarioMenu" class="chevron">Inventario</h3>
-<p id="inventario" class="hide">Mochila, 3 monedas, imperdible, ropas,
-zapatos, sombrero, hornillo</p>
+  <header>
+  <h1>Perdido en Ula</h1>
+    <aside>
+      <h3 id="comandosMenu" class="chevron chevronDown">Nuevo Juego</h3>
+      <ul id="comandos" class="">
+       
+        <li id="nuevoJuego">Nuevo juego</li>
+      </ul>
 
-</aside>
+      <h3 id="hojaPersonajeMenu" class="chevron">Hoja de Personaje</h3>
+      <ul id="hojaPersonaje" class="hide">
+        <li><span id="nombreValue"></span>, <span id="edadValue"></span> años, <span id="genValue"></span></li>
+        <li>FUE: <span id="fueValue"></span> AGI: <span id="agiValue"></span> PER: <span id="perValue"></span></li>
+        <li>Salud: <span id="saludValue"></span></li>
+      </ul>
+      <h3 id="inventarioMenu" class="chevron">Inventario</h3>
+      <p id="inventario" class="hide"></p>
 
-<footer>
-&copy; Miguel de Luis 2018
-</footer>
-</header>
+    </aside>
 
-<main>
-<article>
-<h2 id="sectionTitle"></h2>
-<figure id="figuraOpcional">
-</figure>
-<section id="textoPrincipal">
+    <footer>
+    &copy; Miguel de Luis 2018
+    </footer>
+  </header>
 
-</section>
-<section id="finDeSeccion">
+  <main>
+    <article>
 
-</section>
-</article>
-</main>
-</div>
+      <h2 id="sectionTitle"></h2>
+
+      <section id="textoPrincipal">
+      </section>
+
+      <section id="inventarioSeccion">
+      </section>
+
+      <section id="finDeSeccion">
+      </section>
+
+    </article>
+  </main>
+</div> <!-- Flex Div-->
+
+<!-- Javascript -->
+
+<script type="text/javascript" src="js/secciones.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>

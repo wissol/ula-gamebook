@@ -62,7 +62,10 @@ a:hover {text-decoration: underline; }
 
 .small {font-size:.8em;}
 
-.chevron {position: relative;}
+.chevron {
+	position: relative;
+	cursor: pointer;
+}
 
 .chevron::after {
 	border-style: solid;
@@ -97,11 +100,38 @@ a:hover {text-decoration: underline; }
 	font-family: 'courier new', monospace; 
 	text-align: center;}
 
+aside li {
+	cursor: pointer;
+}
+
+
+
+#listaOpciones li {
+	cursor: pointer;
+	color: #b47853;
+	text-indent: 0;
+}
+
+
+#listaOpciones li:before {
+  content: "\2014";
+  padding-right: 5px;
+}
+#hojaPersonaje li {
+	cursor:	auto;
+}
+
+aside li:hover, #listaOpciones li:hover {
+	text-decoration: underline;
+}
+
+#hojaPersonaje li:hover {
+	text-decoration: none;
+}
 
 @media (min-width: 1200px)
 	{
 	#flex {display: flex; justify-content: center; }
-
 
 	header {
 	width: 400px; 
